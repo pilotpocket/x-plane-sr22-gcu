@@ -135,6 +135,7 @@ namespace XPlaneConnector
                 }
                 catch (ArgumentException ex)
                 {
+                    var error = ex.Message;
                 }
                 catch (Exception ex)
                 {
