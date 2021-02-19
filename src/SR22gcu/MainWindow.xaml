@@ -1,0 +1,444 @@
+﻿<Window x:Class="SR22gcu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR22gcu"
+        mc:Ignorable="d"
+        Title="X-Plane Cirrus SR-22 panel by PilotPocket" Height="794" Width="632"
+        Background="DimGray">
+    <Viewbox Stretch="Uniform">
+        <Grid Height="794" Width="646" x:Name="mainGrid">
+            <Grid.Resources>
+                <Style TargetType="Button" x:Key="PanelButton">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" Background="Transparent" BorderThickness="4" BorderBrush="Transparent">
+                                    <ContentPresenter/>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Red"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style TargetType="Button" x:Key="TransparentButton">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" Background="Transparent" BorderThickness="4" BorderBrush="Transparent">
+                                    <ContentPresenter/>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Red"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style TargetType="Button" x:Key="HighlightedButton">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" Background="Transparent" BorderThickness="4" BorderBrush="Red">
+                                    <ContentPresenter/>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Black"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style TargetType="Button" x:Key="SettingsButton">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" Background="Transparent" BorderThickness="4" BorderBrush="YellowGreen">
+                                    <ContentPresenter/>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Black"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.Background>
+                <ImageBrush ImageSource="cirrus-x-plane-perspective-panel.bmp"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="3" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding HdgLeft}"/>
+            <Button Grid.Row="3" Grid.Column="11" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding HdgRight}"/>
+            <Button Grid.Row="7" Grid.Column="2" Grid.RowSpan="10" Grid.ColumnSpan="14" Style="{DynamicResource PanelButton}" Command="{Binding HdgSync}"/>
+
+            <Button Grid.Row="18" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding CrsLeft}"/>
+            <Button Grid.Row="18" Grid.Column="11" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding CrsRight}"/>
+            <Button Grid.Row="22" Grid.Column="2" Grid.RowSpan="10" Grid.ColumnSpan="14" Style="{DynamicResource PanelButton}" Command="{Binding CrsCenter}"/>
+
+            <Button Grid.Row="33" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}"  Command="{Binding AltLeft}"/>
+            <Button Grid.Row="33" Grid.Column="11" Grid.RowSpan="4" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding AltRight}"/>
+            <Button Grid.Row="37" Grid.Column="2" Grid.RowSpan="10" Grid.ColumnSpan="14" Style="{DynamicResource PanelButton}" Command="{Binding AltSync}"/>
+
+            <Button Grid.Row="4" Grid.Column="19" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}"  Command="{Binding Direct}"/>
+            <Button Grid.Row="9" Grid.Column="19" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}" Command="{Binding Fpl}"/>
+            <Button Grid.Row="15" Grid.Column="19" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}" Command="{Binding Clr}"/>
+            <Button Grid.Row="4" Grid.Column="27" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}"  Command="{Binding Menu}"/>
+            <Button Grid.Row="9" Grid.Column="27" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}"  Command="{Binding Proc}"/>
+            <Button Grid.Row="15" Grid.Column="27" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}" Command="{Binding Ent}"/>
+
+            <Button Grid.Row="3" Grid.Column="35" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding FmsInnerLeft}"/>
+            <Button Grid.Row="3" Grid.Column="40" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding FmsInnerRight}"/>
+            <Button Grid.Row="7" Grid.Column="35" Grid.RowSpan="7" Grid.ColumnSpan="11" Style="{DynamicResource PanelButton}" Command="{Binding FmsCursor12}"/>
+            <Button Grid.Row="14" Grid.Column="35" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding FmsOuterLeft}"/>
+            <Button Grid.Row="14" Grid.Column="40" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding FmsOuterRight}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="49" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding FmsLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="4" Grid.Column="47" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}" Command="{Binding Fms}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="49" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding ComLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="9" Grid.Column="47" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}"  Command="{Binding Com}"/>
+            <Button Grid.Row="15" Grid.Column="51" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Flip}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="57" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding XpdrLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="4" Grid.Column="55" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}" Command="{Binding Xpdr}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="57" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding NavLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="9" Grid.Column="55" Grid.RowSpan="4" Grid.ColumnSpan="7" Style="{DynamicResource PanelButton}"  Command="{Binding Nav}"/>
+
+            <Button Grid.Row="3" Grid.Column="64" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding RangeLeft}"/>
+            <Button Grid.Row="3" Grid.Column="70" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding RangeRight}"/>
+            <Button Grid.Row="7" Grid.Column="64" Grid.RowSpan="8" Grid.ColumnSpan="12" Style="{DynamicResource PanelButton}"/>
+
+            <Button Grid.Row="23" Grid.Column="18" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_A}"/>
+            <Button Grid.Row="23" Grid.Column="25" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_B}"/>
+            <Button Grid.Row="23" Grid.Column="31" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_C}"/>
+            <Button Grid.Row="23" Grid.Column="37" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_D}"/>
+            <Button Grid.Row="23" Grid.Column="43" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_E}"/>
+            <Button Grid.Row="23" Grid.Column="50" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_F}"/>
+
+            <Button Grid.Row="28" Grid.Column="21" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_G}"/>
+            <Button Grid.Row="28" Grid.Column="28" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_H}"/>
+            <Button Grid.Row="28" Grid.Column="34" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_I}"/>
+            <Button Grid.Row="28" Grid.Column="41" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_J}"/>
+            <Button Grid.Row="28" Grid.Column="47" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_K}"/>
+
+            <Button Grid.Row="33" Grid.Column="18" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_L}"/>
+            <Button Grid.Row="33" Grid.Column="25" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_M}"/>
+            <Button Grid.Row="33" Grid.Column="31" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_N}"/>
+            <Button Grid.Row="33" Grid.Column="37" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_O}"/>
+            <Button Grid.Row="33" Grid.Column="43" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_P}"/>
+            <Button Grid.Row="33" Grid.Column="50" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Q}"/>
+
+            <Button Grid.Row="38" Grid.Column="21" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_R}"/>
+            <Button Grid.Row="38" Grid.Column="28" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_S}"/>
+            <Button Grid.Row="38" Grid.Column="34" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_T}"/>
+            <Button Grid.Row="38" Grid.Column="41" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_U}"/>
+            <Button Grid.Row="38" Grid.Column="47" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_V}"/>
+
+            <Button Grid.Row="43" Grid.Column="18" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_W}"/>
+            <Button Grid.Row="43" Grid.Column="25" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_X}"/>
+            <Button Grid.Row="43" Grid.Column="31" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Y}"/>
+            <Button Grid.Row="43" Grid.Column="37" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Z}"/>
+            <Button Grid.Row="43" Grid.Column="43" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Space}"/>
+            <Button Grid.Row="43" Grid.Column="50" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Bksp}"/>
+
+
+            <Button Grid.Row="24" Grid.Column="59" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_1}"/>
+            <Button Grid.Row="29" Grid.Column="59" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_4}"/>
+            <Button Grid.Row="34" Grid.Column="59" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_7}"/>
+            <Button Grid.Row="40" Grid.Column="59" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_Dot}"/>
+
+            <Button Grid.Row="24" Grid.Column="65" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_2}"/>
+            <Button Grid.Row="29" Grid.Column="65" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_5}"/>
+            <Button Grid.Row="34" Grid.Column="65" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_8}"/>
+            <Button Grid.Row="40" Grid.Column="65" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_0}"/>
+
+            <Button Grid.Row="24" Grid.Column="71" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_3}"/>
+            <Button Grid.Row="29" Grid.Column="71" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_6}"/>
+            <Button Grid.Row="34" Grid.Column="71" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_9}"/>
+            <Button Grid.Row="40" Grid.Column="71" Grid.RowSpan="5" Grid.ColumnSpan="5" Style="{DynamicResource PanelButton}" Command="{Binding Keyboard_PlusMinus}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="9" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotHdgLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="7" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Hdg}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotNavLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="16" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Nav}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="62" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotAprLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="64" Grid.Column="16" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Apr}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="28" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotApLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="26" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Ap}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="62" Grid.Column="28" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotFdLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="64" Grid.Column="26" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Fd}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="37" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotLvlLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="35" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Lvl}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="62" Grid.Column="37" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotYdLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="64" Grid.Column="35" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Yd}"/>
+
+            <Button Grid.Row="55" Grid.Column="49" Grid.RowSpan="7" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Up}"/>
+            <Button Grid.Row="62" Grid.Column="49" Grid.RowSpan="7" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Dn}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="60" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotIasLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="58" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Ias}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="62" Grid.Column="60" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotVsLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="64" Grid.Column="58" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Vs}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="54" Grid.Column="70" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotAltLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="56" Grid.Column="68" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Alt}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="62" Grid.Column="70" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding AutopilotVnvLed}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="64" Grid.Column="68" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding AutoPilot_Vnv}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="74" Grid.Column="15" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Com1Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="76" Grid.Column="13" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Com1}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="80" Grid.Column="15" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Mic1Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="82" Grid.Column="13" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Mic1}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="74" Grid.Column="21" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Com2Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="76" Grid.Column="19" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Com2}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="80" Grid.Column="21" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Mic2Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="82" Grid.Column="19" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Mic2}"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="74" Grid.Column="28" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Nav1Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="76" Grid.Column="26" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Nav1}"/>
+            <Viewbox Stretch="Uniform" Grid.Row="74" Grid.Column="35" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+                <TextBlock Foreground="{Binding Nav2Led}">▼</TextBlock>
+            </Viewbox>
+            <Button Grid.Row="76" Grid.Column="33" Grid.RowSpan="4" Grid.ColumnSpan="6" Style="{DynamicResource PanelButton}" Command="{Binding Audio_Nav2}"/>
+
+            <Button Grid.Row="76" Grid.Column="3" Grid.RowSpan="4" Grid.ColumnSpan="6" x:Name="btnHighlight" Click="btnHighlight_Click" BorderBrush="Lime"
+                    ToolTip="Highlight panel buttons">
+                <Button.Content>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" FontWeight="Black" FontSize="22">&#xE706;</TextBlock>
+                </Button.Content>
+            </Button>
+            <Button Grid.Row="82" Grid.Column="3" Grid.RowSpan="4" Grid.ColumnSpan="6" x:Name="btnConnect" Click="btnConnect_Click" BorderBrush="Lime"
+                    ToolTip="Connect to X-Plane">
+                <Button.Content>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" FontWeight="Black" FontSize="22">&#xE709;</TextBlock>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Viewbox>
+</Window>
